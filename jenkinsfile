@@ -21,10 +21,6 @@ pipeline {
                deploy adapters: [tomcat8(credentialsId: 'Tomcat_username_password', path: '', url: 'http://107.22.61.64:9090/')], contextPath: null, war: '**/*.war'
             }
         }
-        stage('Email Notification') {
-            steps {
-               emailext body: 'THIS IS SUCCESSFULLY DEPLOYED IN TO THE TOMCAT SERVER', subject: 'JAVA-WEB-APP-BUILD-JOB-STATUS', to: 'mmbabu0705@gmail.com, akshith.gopidi@gmail.com'
-            }
-        }
+       
     }
 }
